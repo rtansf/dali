@@ -1,3 +1,5 @@
+<h1>Dali - Example goland/bazel project</h1>
+
 To run gazelle:
 bazel run //:gazelle
 
