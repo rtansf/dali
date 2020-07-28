@@ -6,9 +6,11 @@ go_library(
         "business.go",
         "counting.go",
         "product.go",
+        "vendorconfig.go",
     ],
     importpath = "github.marqeta.com/marqeta/dali/models",
     visibility = ["//visibility:public"],
+    deps = ["@com_github_google.uuid//:go_default_library"],
 )
 
 go_test(
@@ -17,6 +19,12 @@ go_test(
         "business_test.go",
         "counting_test.go",
         "product_test.go",
+        "vendorconfig_test.go",
     ],
+    data = glob([
+        "testdata/**",
+        "sql/ddl.sql",
+    ]),
     embed = [":go_default_library"],
+    deps = ["@com_github_lib.pq//:go_default_library"],
 )

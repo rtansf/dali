@@ -42,6 +42,12 @@ go_repository(
     version = "v1.7.4",
 )
 
+go_repository(
+    name = "com_github_google.uuid",
+    importpath = "github.com/google/uuid",
+    sum = "h1:Gkbcsh/GbpXz7lPftLA3P6TYMwjCLYm83jiFQZF/3gY=",
+    version = "v1.1.1",
+)
 
 # Download the rules_docker repository at release v0.13.0
 http_archive(

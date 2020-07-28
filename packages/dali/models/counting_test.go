@@ -3,8 +3,10 @@
 package models
 
 import (
+    "io/ioutil"
     "testing"
     "os"
+    "fmt"
 )
 
 func TestCounting(m *testing.M) {
@@ -18,6 +20,12 @@ func TestOne(t *testing.T) {
     if actual != expected {
         t.Errorf("Expected: %d. Got: %d", expected, actual)
     }
-    
+
+    data2, err2 := ioutil.ReadFile("sql/ddl.sql")
+    if err2 != nil {
+        t.Errorf("ddl.sql not found")
+    }
+    fmt.Println(string(data2))
+
 }
 
